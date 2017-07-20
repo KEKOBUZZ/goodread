@@ -54,4 +54,11 @@ class User(AbstractBaseUser, PermissionsMixin, models.Model):
     USERNAME_FIELD = 'email'
 
     def get_short_name(self):
-        return self.nombre
+        return self.name
+
+    def __str__(self):
+            return "Usuario: %s %s" % (self.name,self.last_name)#pondra el nombre del libro
+
+
+
+

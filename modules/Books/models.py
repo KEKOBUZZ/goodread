@@ -29,12 +29,18 @@ class Book(models.Model):
 		size=5
 	)
 
+	def __str__(self):
+			return "Libro: %s" % self.name #pondra el nombre del libro
+
 class Comments(models.Model):
 	user = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
 	book = models.ForeignKey(Book,on_delete=models.CASCADE)
 	comment = models.TextField()
 
 
+
+	def __str__(self):
+			return "Comment: %s to %s " % (self.user.name,self) #pondra el nombre del libro
 
 
 

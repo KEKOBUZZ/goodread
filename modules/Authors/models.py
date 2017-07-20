@@ -26,9 +26,11 @@ class Author(models.Model):
 	biography = models.TextField()
 	gender = models.CharField(max_length=20, choices=GENDER)
 	#lit_genre = models.CharField(max_length=80, choices=LIT_GENRE)
-	age = models.IntegerField(max_length=3)
+	age = models.IntegerField(null=True)
 	is_alive = models.BooleanField(default=True)
 
+	def __str__(self):
+			return "Autor: %s %s" % (self.name,self.last_name) #pondra el nombre del libro
 
 
 

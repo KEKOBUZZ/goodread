@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'modules.Authors',
     'modules.Books',
-    'modules.Users'
+    'modules.Users',
+    'rest_framework' #browsable api
 ]
 
 MIDDLEWARE = [
