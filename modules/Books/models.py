@@ -18,7 +18,7 @@ class Book(models.Model):
 	id = models.AutoField(primary_key=True)
 	name = models.CharField(max_length=100)
 	ISBN = models.CharField(max_length=18,unique=True)
-	author = models.ForeignKey(Author,on_delete=models.CASCADE)
+	author = models.ForeignKey(Author,on_delete=models.CASCADE,related_name="books") #hacer makemigrations / migrate
 	date_published = models.DateField()
 	cover_photo = models.URLField()
 	summary = models.TextField()
